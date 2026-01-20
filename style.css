@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/797df41b-1129-4496-beb3-6fc2f29c59d3/web/IN-en-20260112-TRIFECTA-perspective_004732f9-7464-4a7c-940b-4a51c4f0f73f_large.jpg");
+    background-position: center center;
+    background-size: max(1200px, 100vw);
+    background-repeat: no-repeat;
+    height: 644px;
+    position: relative;
+}
+
+.main .box {
+    height: 644px;
+    width: 100%;
+    opacity: 0.69;
+    position: absolute;
+    top: 0;
+    background-color: black;
+}
+
+nav {
+    max-width: 60vw;
+    justify-content: space-between;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+nav img {
+    color: red;
+    width: 130px;
+    position: relative;
+    z-index: 10;
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+}
+
+.hero {
+    font-family: 'Martel Sans', sans-serif;
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    gap: 23px;
+    padding: 0 30px;
+}
+
+.hero> :nth-child(1) {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
+    text-align: center;
+}
+
+.hero> :nth-child(2) {
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+
+.hero> :nth-child(3) {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+
+.separation {
+    height: 7px;
+    background-color: rgb(46, 44, 44);
+    position: relative;
+    z-index: 20;
+}
+
+.btn {
+    padding: 3px 8px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(248, 243, 243, 0.021);
+    border-radius: 4px;
+    border: 1px solid white;
+    cursor: pointer;
+
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    font-weight: 400;
+}
+
+.btn-red-sm {
+    background-color: red;
+    color: white;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.main input {
+    padding: 7px 101px 8px 14px;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(246, 238, 238, 0.5);
+}
+.netflix-curve {
+    width: 100%;
+    height: 180px;
+    background-color: transparent;
+    border-top: 3px solid #ff005d;
+    margin-bottom: -140px;
+}
+.netflix-curve svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Trending Section */
+.trending-section {
+    padding: 40px 60px;
+    color: white;
+}
+
+.trending-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Horizontal Scroll Row */
+.trending-row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+}
+.trending-row::-webkit-scrollbar {
+    height: 6px;
+}
+.trending-row::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+/* Movie Card */
+.trend-card {
+    width: 160px;
+    height: 230px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.trend-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Netflix Hover Zoom */
+.trend-card:hover {
+    transform: scale(1.15);
+    z-index: 10;
+}
+
+/* Ranking Number */
+.rank {
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: 700;
+    color: black;
+    -webkit-text-stroke: 3px white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Popup Overlay */
+.preview-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Popup Box */
+.preview-content {
+    width: 700px;
+    background: #111;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+/* Popup Image */
+.preview-content img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Tags Row */
+#popup-tags span {
+    background: #333;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+/* Popup Button */
+.red-btn {
+    background: red;
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 10px;
+}
+/* Reasons Section */
+.reasons {
+    color: white;
+    padding: 40px 60px;
+}
+
+.reasons h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.reason-card {
+    background: radial-gradient(circle at top right, #3a2b70, #081020);
+    padding: 20px;
+    border-radius: 18px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reason-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.reason-card p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.reason-icon {
+    font-size: 32px;
+    align-self: flex-end;
+}
+
+/* FAQ Section */
+.faq {
+    color: white;
+    padding: 40px 60px;
+}
+
+.faq h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    width: 100%;
+    background: #2d2d2d;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    text-align: left;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question span {
+    font-size: 26px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 18px;
+    background: #2d2d2d;
+    margin-top: 2px;
+    font-size: 16px;
+    line-height: 24px;
+}
+.footer {
+    padding: 60px 160px;
+    background-color: #000;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+/* Heading above email */
+.footer-top-text {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Email & Button */
+.footer-email {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.footer-email input {
+    flex: none;
+    width: 450px;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-btn {
+    background: #e50914;
+    border: none;
+    padding: 16px 30px;
+    font-size: 18px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Contact */
+.footer-contact {
+    margin-bottom: 25px;
+}
+
+.footer-contact a {
+    color: #b3b3b3;
+    text-decoration: underline;
+}
+
+/* Netflix uses 3 columns grid */
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: #b3b3b3;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+/* Language Dropdown */
+.footer-lang select {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+    padding: 8px 12px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+/* Netflix India text */
+.footer-region {
+    margin-bottom: 20px;
+}
+
+/* Legal Note */
+.footer-note {
+    font-size: 12px;
+    opacity: .85;
+}
+.footer-note a {
+    color: #b3b3b3;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px;
+    }
+    .footer-email {
+        flex-direction: column;
+    }
+    .footer-email input {
+        width: 100%;
+    }
+    .footer-btn {
+        width: 100%;
+    }
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-email {
+        flex-direction: column;
+        width: 100%;
+    }
+    .footer-email input {
+        width: 100%;
+    }
+}
+/* End of CSS */
