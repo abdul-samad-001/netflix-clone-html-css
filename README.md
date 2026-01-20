@@ -6,7 +6,7 @@ This project focuses on replicating the visual UI design of Netflix without any 
 ---
 
 ## 🚀 Live Demo
-🔗 https://netflix-teal-theta.vercel.app/
+🔗 https://netflix-r8uba0saw-abdul-samad-001s-projects.vercel.app/
 
 ---
 
