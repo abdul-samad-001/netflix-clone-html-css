@@ -43,5 +43,10 @@ netflix-clone/
 ├── style.css
 └── README.md
 ```
-<img src="screenshots/home-page.png" width="800">
+<div align="center">
+  <img src="screenshots/home-page.png" width="300">
+  <img src="screenshots/trending-section.png" width="300">
+  <img src="screenshots/footer-section.png" width="300">
+</div>
+
 
